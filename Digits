@@ -1,0 +1,35 @@
+
+/**
+ *This code will  seperate all parts of a cell  phone number
+ //P.S, this was my best atempt, I think I am somewhat close
+ * @LIAM
+ * 3/
+ */
+import java.util.Scanner;
+public class digits
+{
+    public static void main(String[] args)
+    {
+    Scanner in = new Scanner(System.in);
+    System.out.println("Please Enter Your Phone Number");
+    //gotta start with a print line
+    String phoneNumber= in.nextLine();
+    
+    int length = phoneNumber.length() ;
+    
+    int left = phoneNumber.indexOf("(");
+    
+    int right = phoneNumber.indexOf(")");
+    
+    int dash =  phoneNumber.indexOf("-");
+    //this is where I ran into problems
+    String justDaNumbersOne = phoneNumber.substring(0,phoneNumber.indexOf("left"));
+    String justDaNumbersTwo = phoneNumber.substring(phoneNumber.indexOf("left"),phoneNumber.indexOf("right"));
+    String justDaNumbersThree = phoneNumber.substring(phoneNumber.indexOf("right"),phoneNumber.indexOf("dash"));
+    String justDaNumbersFour = phoneNumber.substring(phoneNumber.indexOf("dash"),phoneNumber.indexOf("dash"));
+    
+    System.out.println("The numbers are "  +  justDaNumbersOne  +  justDaNumbersTwo  +  justDaNumbersThree  +  justDaNumbersFour);
+    
+    
+    }
+}
