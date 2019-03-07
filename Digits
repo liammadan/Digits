@@ -13,22 +13,15 @@ public class digits
     Scanner in = new Scanner(System.in);
     System.out.println("Please Enter Your Phone Number");
     //gotta start with a print line
-    String phoneNumber= in.nextLine();
     
-    int length = phoneNumber.length() ;
+    String phoneNumber = in.next();
     
-    int left = phoneNumber.indexOf("(");
+    int left  =  phoneNumber.indexOf('(');
+    int right  =  phoneNumber.indexOf(')');
+    int firstDash  =  phoneNumber.indexOf('-');
+    int secondDash  =  phoneNumber.indexOf('-',firstDash + 1);
     
-    int right = phoneNumber.indexOf(")");
-    
-    int dash =  phoneNumber.indexOf("-");
-    //this is where I ran into problems
-    String justDaNumbersOne = phoneNumber.substring(0,phoneNumber.indexOf("left"));
-    String justDaNumbersTwo = phoneNumber.substring(phoneNumber.indexOf("left"),phoneNumber.indexOf("right"));
-    String justDaNumbersThree = phoneNumber.substring(phoneNumber.indexOf("right"),phoneNumber.indexOf("dash"));
-    String justDaNumbersFour = phoneNumber.substring(phoneNumber.indexOf("dash"),phoneNumber.indexOf("dash"));
-    
-    System.out.println("The numbers are "  +  justDaNumbersOne  +  justDaNumbersTwo  +  justDaNumbersThree  +  justDaNumbersFour);
+    System.out.println("The phone number is" + (phoneNumber.substring(left + 1, right) + phoneNumber.substring(firstDash + 1, secondDash) + (secondDash  + 1));
     
     
     }
